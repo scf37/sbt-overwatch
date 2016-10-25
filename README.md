@@ -1,8 +1,6 @@
 # sbt-overwatch plugin
 ![Build status](https://travis-ci.org/scf37/sbt-overwatch.svg?branch=master)
 
-STATUS: working, alpha, unstable.
-
 This plugin is smarter replacement for sbt watch feature (`~` command). 
 
 Features:
@@ -21,4 +19,6 @@ overwatchConfiguration in Global := Map(
 )
 
 ```
+
+See test/build.sbt for complete example including sbt-revolver integration.
 
