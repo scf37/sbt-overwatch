@@ -18,7 +18,7 @@ lazy val overwatch = (project in file("."))
     bintrayOrganization := None,
     licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html")),
 
-    resourceGenerators in Compile <+= buildProperties
+    resourceGenerators in Compile += buildProperties.taskValue
 
 )
 

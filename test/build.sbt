@@ -1,3 +1,6 @@
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+libraryDependencies += "commons-io" % "commons-io" % "2.5"
+
 val task1 = taskKey[Unit]("task1")
 val task2 = taskKey[Unit]("task2")
 val task3 = taskKey[Unit]("task3")
@@ -5,7 +8,7 @@ val task3 = taskKey[Unit]("task3")
 
 val overwatchTest = (project in file("."))
     .settings(
-      scalaVersion := "2.11.8",
+      scalaVersion := "2.12.2",
       task1 := {
         streams.value.log.info("js changed")
       },
@@ -20,8 +23,11 @@ val overwatchTest = (project in file("."))
     )
 
 (overwatch in Global) := {
+  //start application when we type overwatch
   (reStart in overwatchTest).toTask("").value
+  //start watching
   (overwatch in Global).value
+  //when we exited, terminate the app
   //for unknown reasons, (reStop in overwatchTest).value does not work
   spray.revolver.Actions.stopAppWithStreams(streams.value, (thisProjectRef in overwatchTest).value)
 }

@@ -41,7 +41,7 @@ object OverwatchPlugin extends AutoPlugin {
     }
 
   override lazy val globalSettings = Seq(
-    overwatch <<= Def.taskDyn {
+    overwatch := Def.taskDyn {
       val log = streams.value.log
       val config = overwatchConfiguration.value
 
@@ -63,8 +63,8 @@ object OverwatchPlugin extends AutoPlugin {
       combinedTask.map { conf =>
         Overwatch(conf, log)
       }
-    },
-    overwatch in Global <<= overwatch,
+    }.value,
+    (overwatch in Global) := overwatch.value,
     overwatchConfiguration := Map.empty
   )
 }
