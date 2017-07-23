@@ -8,7 +8,7 @@ Features:
 - ability to execute different tasks for different directories
 
 
-##Usage
+## Usage
 Add this to `project/plugins.sbt`:
 ```
 resolvers += Resolver.url("plugins", url("https://dl.bintray.com/scf37/sbt-plugins"))(Resolver.ivyStylePatterns)
