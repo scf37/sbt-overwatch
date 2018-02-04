@@ -8,6 +8,7 @@ val task3 = taskKey[Unit]("task3")
 
 val overwatchTest = (project in file("."))
     .settings(
+      crossSbtVersions := Seq("0.13.17", "1.1.0"),
       scalaVersion := "2.12.2",
       task1 := {
         streams.value.log.info("js changed")

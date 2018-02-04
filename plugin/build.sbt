@@ -1,12 +1,12 @@
 lazy val overwatch = (project in file("."))
     .settings(
-
+    crossSbtVersions := Seq("0.13.17", "1.1.0"),
     name := "sbt-overwatch",
     organization := "me.scf37.overwatch",
     sbtPlugin := true,
 
     resolvers += "Scf37" at "https://dl.bintray.com/scf37/maven/",
-    libraryDependencies += "me.scf37.filewatch" %% "filewatch" % "1.0.6",
+    libraryDependencies += "me.scf37.filewatch" %% "filewatch" % "1.0.8",
 
     releaseTagComment := s"[ci skip]Releasing ${(version in ThisBuild).value}",
     releaseCommitMessage := s"[ci skip]Setting version to ${(version in ThisBuild).value}",
@@ -18,7 +18,7 @@ lazy val overwatch = (project in file("."))
     bintrayOrganization := None,
     licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html")),
 
-    resourceGenerators in Compile += buildProperties.taskValue
+    resourceGenerators in Compile += buildProperties
 
 )
 

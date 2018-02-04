@@ -1,5 +1,5 @@
 # sbt-overwatch plugin
-![Build status](https://travis-ci.org/scf37/sbt-overwatch.svg?branch=master)
+[![Build status](https://travis-ci.org/scf37/sbt-overwatch.svg?branch=master)](https://travis-ci.org/scf37/sbt-overwatch)
 
 This plugin is smarter replacement for sbt watch feature (`~` command). 
 
@@ -13,7 +13,7 @@ Add this to `project/plugins.sbt`:
 ```
 resolvers += Resolver.url("plugins", url("https://dl.bintray.com/scf37/sbt-plugins"))(Resolver.ivyStylePatterns)
 resolvers += "Scf37" at "https://dl.bintray.com/scf37/maven/"
-addSbtPlugin("me.scf37.overwatch" % "sbt-overwatch" % "1.0.2")
+addSbtPlugin("me.scf37.overwatch" % "sbt-overwatch" % "1.0.3")
 ```
 
 Configure plugin and type `overwatch`:
