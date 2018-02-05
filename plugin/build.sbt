@@ -1,6 +1,5 @@
 lazy val overwatch = (project in file("."))
     .settings(
-    crossSbtVersions := Vector("0.13.17", "1.1.0"),
     name := "sbt-overwatch",
     organization := "me.scf37.overwatch",
     sbtPlugin := true,
