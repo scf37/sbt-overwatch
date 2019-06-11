@@ -5,7 +5,7 @@ lazy val overwatch = (project in file("."))
     sbtPlugin := true,
 
     resolvers += "Scf37" at "https://dl.bintray.com/scf37/maven/",
-    libraryDependencies += "me.scf37.filewatch" %% "filewatch" % "1.0.8",
+    libraryDependencies += "me.scf37.filewatch" %% "filewatch" % "1.0.9",
 
     releaseTagComment := s"[ci skip]Releasing ${(version in ThisBuild).value}",
     releaseCommitMessage := s"[ci skip]Setting version to ${(version in ThisBuild).value}",

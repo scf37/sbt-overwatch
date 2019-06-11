@@ -31,6 +31,8 @@ script:
   - git branch -f master HEAD
   - git checkout master
   - git branch -u origin/master
-  - cd plugin
+  - cd test
+  - sbt +test
+  - cd ../plugin
   - sbt 'release with-defaults'
 
