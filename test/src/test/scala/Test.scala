@@ -5,12 +5,12 @@ import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
 
 import org.apache.commons.io.FileUtils
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
 /**
   * Created by asm on 07.05.17.
   */
-class Test extends FunSuite {
+class Test extends AnyFunSuite {
 
   test("overwatch should react on file change/create/delete") {
     val sbt = new SbtDriver

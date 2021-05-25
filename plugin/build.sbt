@@ -1,25 +1,33 @@
 lazy val overwatch = (project in file("."))
     .settings(
     name := "sbt-overwatch",
-    organization := "me.scf37.overwatch",
     sbtPlugin := true,
 
-    resolvers += "Scf37" at "https://dl.bintray.com/scf37/maven/",
-    libraryDependencies += "me.scf37.filewatch" %% "filewatch" % "1.0.9",
+    libraryDependencies += "me.scf37" %% "filewatch" % "1.0.0",
 
-    releaseTagComment := s"[ci skip]Releasing ${(version in ThisBuild).value}",
-    releaseCommitMessage := s"[ci skip]Setting version to ${(version in ThisBuild).value}",
-
-//    bintrayOmitLicense := true,
-    bintrayVcsUrl := Some("git@github.com:scf37/sbt-overwatch.git"),
-    bintrayRepository := "sbt-plugins",
-    publishMavenStyle := false,
-    bintrayOrganization := None,
     licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html")),
 
-    resourceGenerators in Compile += buildProperties
-
+    Compile / resourceGenerators += buildProperties,
+    publishSettings
 )
+
+lazy val publishSettings = Seq(
+      organization := "me.scf37",
+      description := "Watch project files and trigger sbt tasks on changes",
+      Compile / doc / sources := Seq.empty,
+      scmInfo := Some(
+            ScmInfo(
+                  url("https://github.com/scf37/sbt-overwatch"),
+                  "git@github.com:scf37/sbt-overwatch.git"
+            )
+      ),
+      licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0")),
+      homepage := Some(url("https://github.com/scf37/sbt-overwatch")),
+      developers := List(
+            Developer("scf37", "Sergey Alaev", "scf370@gmail.com", url("https://github.com/scf37")),
+      )
+)
+
 
 
 
