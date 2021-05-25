@@ -1,4 +1,4 @@
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9" % "test"
 libraryDependencies += "commons-io" % "commons-io" % "2.5"
 
 val task1 = taskKey[Unit]("task1")
@@ -8,8 +8,8 @@ val task3 = taskKey[Unit]("task3")
 
 val overwatchTest = (project in file("."))
     .settings(
-      crossSbtVersions := Seq("0.13.17", "1.2.8"),
-      crossScalaVersions := Seq("2.12.8", "2.13.0"),
+      crossSbtVersions := Seq("0.13.17", "1.5.2"),
+      crossScalaVersions := Seq("2.12.8", "2.13.0", "3.0.0"),
       task1 := {
         streams.value.log.info("js changed")
       },
