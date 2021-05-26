@@ -11,7 +11,7 @@ Features:
 ## Usage
 Add this to `project/plugins.sbt`:
 ```
-addSbtPlugin("me.scf37.overwatch" % "sbt-overwatch" % "1.0.10")
+addSbtPlugin("me.scf37.overwatch" % "sbt-overwatch" % "1.0.11")
 ```
 
 Configure plugin and type `overwatch`:

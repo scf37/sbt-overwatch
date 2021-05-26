@@ -12,3 +12,4 @@ rebel.xml
 .idea
 *.iml
 .secret
+.bsp
