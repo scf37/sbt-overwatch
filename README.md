@@ -11,9 +11,7 @@ Features:
 ## Usage
 Add this to `project/plugins.sbt`:
 ```
-resolvers += Resolver.url("plugins", url("https://dl.bintray.com/scf37/sbt-plugins"))(Resolver.ivyStylePatterns)
-resolvers += "Scf37" at "https://dl.bintray.com/scf37/maven/"
-addSbtPlugin("me.scf37.overwatch" % "sbt-overwatch" % "1.0.8")
+addSbtPlugin("me.scf37.overwatch" % "sbt-overwatch" % "1.0.9")
 ```
 
 Configure plugin and type `overwatch`:
